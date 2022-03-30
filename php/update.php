@@ -8,7 +8,7 @@ if(isset($_GET['id'])) {
     $id = validate($_GET['id']);
 
     // Escape for DB insert.
-    $id = db_escape($id);
+    $id = db_escape($conn, $id);
     
     // Query DB.
     $sql = "SELECT * FROM entries WHERE UUID=$id";
